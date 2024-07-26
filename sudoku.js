@@ -1,8 +1,30 @@
+const fs = require('fs')
+//const puzzle = fs.readFileSync('./puzzle.txr', 'utf-8')
 function read() {
+  const puzzle = fs.readFileSync('./puzzles.txt', 'utf-8');
+  const regExFor81 = /([1-9-]{81})/gm;
+  const arrayOfSudoku = puzzle.match(regExFor81)
+  const oneSudoku = arrayOfSudoku.shift()
+  // const regExFor9 = /([-]*[0-9][-]*){9}/
+  
+  function slicer (oneSudoku){
+  const short = oneSudoku.slice(0, 8)
+console.log(short)
+  }
+ 
+  
+  }
+  //console.log(oneSudoku)
+
+//console.log(typeof oneSudoku)
+  //return puzzle
   /**
+   * 
    * Прочесть файл puzzles.txt в кодировке 'utf-8' и вернуть эти данные из функции
    */
-}
+
+
+console.log(read())
 
 function solve() {
   /**
